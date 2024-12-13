@@ -23,11 +23,16 @@ const Logincomp = () => {
         .then((data) => {
             if(data.success){
                 localStorage.setItem("usertoken", data.usertoken)
+                localStorage.setItem("userid", data.user._id)
                 window.location.href = "/";
                 
             }
+            console.log(data);
+            
         })
     }
+    console.log();
+    
   return (
     <>
     <div>

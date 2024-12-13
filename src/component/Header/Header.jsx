@@ -12,13 +12,20 @@ const Header = () => {
       once: true, // Whether animation should only happen once
     });
   }, []);
+
+  function logout(){
+ localStorage.removeItem("usertoken");
+ localStorage.removeItem("userid");
+ window.location.href=("/login")
+
+  }
   return (
     <>
   
  <div>
 
 <header 
-class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-neutral-100 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg"
+class="absolute inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-neutral-100 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg"
 data-aos="zoom-out"
 >
 <div class="px-4">
@@ -39,7 +46,7 @@ data-aos="zoom-out"
       <div class="flex items-center justify-end gap-3">
          
 
-              {localStorage.getItem("usertoken")? <Link to='/login' class="inline-flex items-center justify-center rounded-xl bg-[#ef305c] px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"><button onClick={()=>{localStorage.removeItem("usertoken");window.location.href=("/login")}}>Logout</button></Link>:
+              {localStorage.getItem("usertoken")? <Link to='/login' class="inline-flex items-center justify-center rounded-xl bg-[#ef305c] px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"><button onClick={logout}>Logout</button></Link>:
 
               <>
               <Link to='/login' class="inline-flex items-center justify-center rounded-xl bg-[#ef305c] px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"><button>Login</button></Link>

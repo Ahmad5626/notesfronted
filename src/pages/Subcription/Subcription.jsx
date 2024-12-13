@@ -26,15 +26,27 @@ const Subcription = () => {
                 name: "Test",
                 description: "Subscription Plan",
                 order_id: data.id, // Order ID from backend
-                handler: function (response) {
+                handler:async function  (response) {
                     // Extract Payment ID
                     const paymentId = response.razorpay_payment_id;
                     const orderId = response.razorpay_order_id;
                     const signature = response.razorpay_signature;
+                    
+                    localStorage.setItem("paymentId", paymentId);
 
                     console.log("Payment response:", response);
+                    const userid=localStorage.getItem("userid")
+                    console.log(userid);
                     
-
+                    
+                    await fetch("http://localhost:5000/subcribe",({
+                        method:"POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ paymentId, orderId, signature }),
+                    }))
+ 
                     alert(`Payment successful! Payment ID: ${paymentId}`);
                 },
                 prefill: {
