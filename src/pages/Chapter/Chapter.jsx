@@ -11,7 +11,7 @@ const [subject, setSubject] = useState([]);
   
   useEffect(() => {  
        
-    fetch("http://localhost:5000/subjects")
+    fetch("https://notesbackend-hdqh.onrender.com/subjects")
    .then((res) => res.json())
    .then((data) => setSubject(data))
      

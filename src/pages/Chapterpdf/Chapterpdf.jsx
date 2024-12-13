@@ -26,7 +26,7 @@ const Chapterpdf = () => {
     };
   }, []);
   useEffect(() => {
-    fetch("http://localhost:5000/subjects")
+    fetch("https://notesbackend-hdqh.onrender.com/subjects")
       .then((res) => res.json())
       .then((data) => setSubject(data));
   }, []);
@@ -61,7 +61,7 @@ const Chapterpdf = () => {
                                   <button
                                     onClick={() =>
                                       setSelectedPdf(
-                                        `http://localhost:5000/images/${item2.notefullpdf}`
+                                        `https://notesbackend-hdqh.onrender.com/images/${item2.notefullpdf}`
                                       )
                                     }
                                     target="_blank"
@@ -77,7 +77,7 @@ const Chapterpdf = () => {
                                   <button
                                     onClick={() =>
                                       setDistionarypgf(
-                                        `http://localhost:5000/images/${item2.distionaryfullpdf}`
+                                        `https://notesbackend-hdqh.onrender.com/images/${item2.distionaryfullpdf}`
                                       )
                                     }
                                     target="_blank"

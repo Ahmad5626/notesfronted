@@ -13,7 +13,7 @@ const Chapterpdf = () => {
   const [subject, setSubject] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/subjects")
+    fetch("https://notesbackend-hdqh.onrender.com/subjects")
       .then((res) => res.json())
       .then((data) => setSubject(data));
   }, []);
@@ -46,7 +46,7 @@ const Chapterpdf = () => {
                                   class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-gray-900"
                                 >
                                   <a
-                                    href={`http://localhost:5000/images/${item2.notedemopgf}`}
+                                    href={`https://notesbackend-hdqh.onrender.com/images/${item2.notedemopgf}`}
                                     target="_blank"
                                   >
                                     Demo
@@ -58,7 +58,7 @@ const Chapterpdf = () => {
                                   class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-gray-900"
                                 >
                                   <a
-                                    href={`http://localhost:5000/images/${item2.notefullpdf}`}
+                                    href={`https://notesbackend-hdqh.onrender.com/images/${item2.notefullpdf}`}
                                     target="_blank"
                                   >
                                     Full pdf
@@ -94,7 +94,7 @@ const Chapterpdf = () => {
                                   class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-gray-900"
                                 >
                                   <a
-                                    href={`http://localhost:5000/images/${item2.notedemopgf}`}
+                                    href={`https://notesbackend-hdqh.onrender.com/images/${item2.notedemopgf}`}
                                     target="_blank"
                                   >
                                     Demo
@@ -106,7 +106,7 @@ const Chapterpdf = () => {
                                   class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-gray-900"
                                 >
                                   <a
-                                    href={`http://localhost:5000/images/${item2.notefullpdf}`}
+                                    href={`https://notesbackend-hdqh.onrender.com/images/${item2.notefullpdf}`}
                                     target="_blank"
                                   >
                                     Full pdf

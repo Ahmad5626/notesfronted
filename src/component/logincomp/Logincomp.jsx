@@ -13,7 +13,7 @@ const Logincomp = () => {
     const loginUser = async (e) => {
         e.preventDefault();
         const newdata=logindata
-        const response = await fetch("http://localhost:5000/login", {
+        const response = await fetch("https://notesbackend-hdqh.onrender.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
